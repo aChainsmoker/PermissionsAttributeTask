@@ -81,7 +81,7 @@ public class ProfileController : Controller
         return View("Edit", userProfile);
     }
     
-    [HttpPost]
+    [HttpPut]
     [HasPermission(Permissions.UpdateUserProfile)]
     public async Task<IActionResult> Edit(Guid id, UserProfile updatedUserProfile, CancellationToken cancellationToken)
     {
@@ -100,7 +100,7 @@ public class ProfileController : Controller
     }
     
     
-    [HttpPost]
+    [HttpDelete]
     [HasPermission(Permissions.DeleteUserProfile)]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
